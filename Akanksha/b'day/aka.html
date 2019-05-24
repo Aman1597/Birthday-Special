@@ -1,0 +1,184 @@
+<!--this is new-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>AMAN ANIMATION PRESENTS</title>
+<script>
+   var audio, playbtn, seek_bar;
+   function initAudioPlayer(){
+	   audio = new Audio();
+	   audio.src = "b'day.mp3";
+	   audio.loop = false;
+	   audio.play();
+	}
+   window.addEventListener("load", initAudioPlayer);
+</script>
+<style>
+body
+{
+   margin: 0;
+   padding: 0;
+   background: #607d8b;
+   overflow: hidden;
+}
+.a
+{
+ height: 100vh;
+ width: calc(1366*5px);
+ background: url("tryb3.jpg"), url("a12.png"), url("try3.png"), url("a6.jpg"), url("tryb3.jpg");
+ background-size: 20% 100% ;
+ background-repeat: no-repeat;
+ background-position:0px , 1366px , calc(2*1366px) , calc(3*1366px) , calc(4*1366px) ;
+ animation: slide 10s linear infinite;
+}
+@keyframes slide
+{
+   0%
+   {
+     transform: translate3d(0, 0, 0);
+   }
+   100%
+   {
+     transform: translate3d(-80%, 0, 0);
+   }
+}
+.b
+{
+   width: 100%;
+   height: 100%;
+   animation: slidea 10s linear infinite;
+}
+@keyframes slidea
+{
+   0%
+   {
+     transform: translate3d(0, 0, 0);
+   }
+   100%
+   {
+     transform: translate3d(80%, 0, 0);
+   }
+}
+
+.box
+{
+   position: relative;// absolute;
+   top: calc(50% - 240px);
+   left:0.7%;//calc(10% - 150px);
+   transform: perspective(1000px) rotateY(-45deg);
+   width: 300px;
+   height: 450px;
+   float:left;
+   transform-style: preserve-3d;
+}
+/*.box:before
+{
+   content: '';
+   position: absolute;
+   bottom: -100px;
+   left: 0;
+   width: 100%;
+   height: 50px;
+   background: #000;
+   filter: blur(40px);
+   opacity: 0.5;
+   transform: rotateX(90deg);
+}*/
+.box div
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transform-style: preserve-3d;
+   animation: animate 8s linear infinite;
+}
+.box div span
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(0deg, #f1f1f1, #bbb, #f1f1f1);
+   border-radius: 20px;
+   font-size: 0;
+}
+.box div span:nth-child(1)
+{
+    transform: rotateX(0deg);
+}
+.box div span:nth-child(2)
+{
+    transform: rotateX(45deg);
+}
+.box div span:nth-child(3)
+{
+    transform: rotateX(-45deg);
+}
+.box div span:nth-child(4)
+{
+    transform: rotateX(90deg);
+}
+@keyframes animate
+{
+   0%
+   {
+      transform: perspective(1000px) rotateX(0deg);
+   } 
+   100%
+   {
+      transform: perspective(1000px) rotateX(359deg);
+   } 
+}
+.box div span img
+{
+  height:50%;
+  width:100%;
+  border-radius:20px 20px 0px 0px;
+}
+.wc
+{
+ position:relative;
+ text-align:center;
+ top: calc(50% - 240px);
+ width: calc(10% - 150px);
+ height: 450px;
+ font-size:50px;
+ float:left;
+ color:yellow;
+ text-shadow: 0px 10px 20px rgba(0,0,0,1) , 1.3px -1.3px 0 black , 1.3px 1.3px 0 black , -1.3px -1.3px 0 black , -1.3px 1.3px 0 black;
+}
+</style>
+</head>
+<body>
+  <div class="a">
+    <div class="b">
+	   <div class="wc"><br/><br/>HAPPY<br/><br/>BIRTHDAY</div>
+       <div class="box">
+          <div>
+	        <span>
+			<img src="a2.jpg"/>
+	    	<img src="a1.jpg" style="transform: rotate(180deg);"/>
+			</span>
+	        <span>
+			<img src="a5.jpg"/>
+		    <img src="a8.png" style="transform: rotate(180deg);"/>
+			</span>
+	        <span>
+			<img src="az.jpg"/>
+		    <img src="a7.jpg" style="transform: rotate(180deg);"/>
+			</span>
+	        <span>
+			<img src="a3.jpg"/>
+		    <img src="a4.png" style="transform: rotate(180deg);"/>
+			</span>
+	      </div>
+       </div>
+	   <div class="wc"><br/><br/>TO<br/><br/>YOU
+	   </div>
+	</div>   
+  </div>
+</body>
